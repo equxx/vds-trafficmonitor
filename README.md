@@ -10,4 +10,4 @@ Bu proje, VDS sunucusunun işlemci, bellek ve ağ trafiği bilgilerini TrafficMo
 4. `credentials.txt` içindeki kullanıcı adı ve parolayı Windows'taki `TrafficMonitor-VDS.lua` dosyasına yazın.
 5. TrafficMonitor'u yeniden başlatın.
 
-`credentials.txt` dosyası özeldir; Git'e veya GitHub'a yüklemeyin. Trafik hızları KB/s cinsinden gösterilir.
+`credentials.txt` dosyası özeldir. Trafik hızları KB/s cinsinden gösterilir.
