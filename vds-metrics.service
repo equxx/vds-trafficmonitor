@@ -1,0 +1,18 @@
+[Unit]
+Description=Local VDS metrics endpoint for TrafficMonitor
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/vds-trafficmonitor/metrics.py
+Restart=always
+RestartSec=2
+User=nobody
+Group=nogroup
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
