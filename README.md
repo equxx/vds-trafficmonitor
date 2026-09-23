@@ -1,5 +1,13 @@
-# TrafficMonitor VDS widget
+# TrafficMonitor VDS göstergesi
 
-This folder contains a small, read-only metrics endpoint and a TrafficMonitor Lua plug-in. The endpoint reports host CPU, memory, and aggregate network rates. It listens only on loopback; Caddy exposes it through HTTPS with a dedicated Basic Auth account.
+Bu proje, VDS sunucusunun işlemci, bellek ve ağ trafiği bilgilerini TrafficMonitor'da gösterir. Sunucu tarafındaki servis yalnızca yerel bağlantıları dinler. Caddy, özel Basic Auth hesabı kullanarak ölçüm uç noktasını HTTPS üzerinden erişime açar.
 
-The Windows side needs the 64-bit TrafficMonitor Lua plug-in installed. Download the x64 ZIP from the upstream [TrafficMonitorLuaPlugin releases](https://github.com/compilelife/TrafficMonitorLuaPlugin/releases), extract its contents into TrafficMonitor's `plugins` directory, then place `TrafficMonitor-VDS.lua` in the Lua plug-in's script directory. After deployment, copy the credentials from `credentials.txt` into `TrafficMonitor-VDS.lua` on the Windows client, then restart TrafficMonitor. Keep `credentials.txt` private and do not commit it.
+## Kurulum
+
+1. [TrafficMonitorLuaPlugin sürümlerinden](https://github.com/compilelife/TrafficMonitorLuaPlugin/releases) x64 ZIP dosyasını indirin ve içeriğini TrafficMonitor'un `plugins` klasörüne çıkarın.
+2. `TrafficMonitor-VDS.lua` dosyasını Lua eklentisinin script klasörüne kopyalayın.
+3. VDS üzerinde `deploy.sh` betiğini çalıştırarak sunucu servisini kurun. Betik, giriş bilgilerini `credentials.txt` dosyasına kaydeder.
+4. `credentials.txt` içindeki kullanıcı adı ve parolayı Windows'taki `TrafficMonitor-VDS.lua` dosyasına yazın.
+5. TrafficMonitor'u yeniden başlatın.
+
+`credentials.txt` dosyası özeldir; Git'e veya GitHub'a yüklemeyin. Trafik hızları KB/s cinsinden gösterilir.
